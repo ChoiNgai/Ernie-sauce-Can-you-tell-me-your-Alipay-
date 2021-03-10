@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>欧尼酱可以告诉我你的支付宝吗？</title>
+		 <script typet="text/javascript" src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+		 <style>
+		  *{
+		      padding: 0;
+		      margin: 0;
+		 }
+		 body{
+		     padding: 0px;
+		     background: url() 0 0 no-repeat;
+		     background-size: cover;
+		 }
+		 
+		 .demo{
+		     width: 100%;
+		     height: 100%;
+		     position: relative;
+			 
+		 }
+		 .demo-bg{
+		     position: absolute;
+		     left: 0;
+		     top: 0;
+		     z-index: 0;
+		     width: 100%;
+		     height: 400px;
+		     /*filter:Alpha(opacity=50);*/
+		     background-color: rgba(0,0,0,0.4); /*实现透明背景*/
+		     display: none;
+		 }
+		 .button{
+		     width: 90px;
+		     height: 30px;
+		     border-radius: 5px;
+		     -webkit-border-radius: 5px;
+		     -moz-border-radius: 5px;
+		     background: yellow;
+		     margin: 20px 0 0 40px;
+		     position: relative;
+		     border: 0;
+		     box-shadow:  2px 2px 10px red;
+		     -webkit-box-shadow:  2px 2px 10px red;
+		     -moz-box-shadow:  2px 2px 10px red;
+		 }
+		 .button_close{
+		     width: 90px;
+		     height: 30px;
+		     border-radius: 5px;
+		     -webkit-border-radius: 5px;
+		     -moz-border-radius: 5px;
+		     background: pink;
+		     margin: 20px 0 0 40px;
+		     position: relative;
+		     border: 0;
+		     box-shadow:  2px 2px 10px red;
+		     -webkit-box-shadow:  2px 2px 10px bule;
+		     -moz-box-shadow:  2px 2px 10px blue;
+		 }
+		 .demo-txt{
+		     position: relative;
+		     z-index: 1;
+		     color: #000;
+		     background: white;
+		     width: 550px;
+		     height: 550px;
+		     margin:auto;
+		     padding: auto;
+		     left: 0;
+		     right: 0;
+		     bottom: 0;
+		     top: 0;
+		     display: none;
+		     padding: 10px;
+		     border-radius: 10px;
+		     -webkit-border-radius: 5px;
+		     -moz-border-radius: 5px;
+			 
+			 border-style: solid; 
+			 border-width: 1px;
+			 border-color:gray;
+		 }
+		 .demo-txt2{
+		     position: relative;
+		     z-index: 1;
+		     color: #000;
+		     background: white;
+		     width: 550px;
+		     height: 580px;
+		     margin:auto;
+		     padding: auto;
+		     left: 0;
+		     right: 0;
+		     bottom: 0;
+		     top: 0;
+		     display: none;
+		     padding: 10px;
+		     border-radius: 10px;
+		     -webkit-border-radius: 5px;
+		     -moz-border-radius: 5px;
+		 			 
+		 			 border-style: solid; 
+		 			 border-width: 1px;
+		 			 border-color:gray;
+		 }
+		 #btn{
+		     float: center;
+		 }
+		 #btn2{
+		     float: center;
+		 }
+		 
+		 .alertMessageBg{
+		 position:fixed;
+		 _position:absolute;
+		 width:100%;
+		 height:100%;
+		 left:0;
+		 top:0;
+		 background:#000;
+		 opacity:0.5;
+		 -moz-opacity:0.5;
+		 filter:alpha(opacity=50);
+		 z-index:97;
+		 display:none;
+		 }
+		 
+		 </style>
+
+	</head>
+	<body>
+	
+	
+		<img src="images/1.png" width=100%></img>
+		<h4><center>欧尼酱...可以...告诉我...你的...支付宝吗?</center></h4>
+		<center>
+			<form action="#" method="post" onSubmit="return false;">     <!-- onSubmit="return false;" 作用是提交之后onclick调用的函数不失效-->
+			支付宝账号：
+			<input type="text" name="YourName" id="yourname" value = " " style="border-radius:9px;"><br>
+			<p style="line-height:30px"></p>
+			
+			支付宝密码：
+			<input type="password" name="YourPW" id="yourpw" value = "" style="border-radius:9px;"><br>
+			<p style="line-height:30px"></p>
+			
+			支&nbsp;付&nbsp;密&nbsp;码：
+			<input type="password" name="YourPayPW" id="yourpaypw" value = "" style="border-radius:9px;"><br>
+			<p style="line-height:30px"></p>
+			
+			<p style="line-height:30px"></p>
+			<input type="submit"  value="好的,给你 !" onclick="NullJudge()" class="button">
+			<!--type="submit"--> 
+			</form>
+		</center>
+		
+		
+<div class='demo'>
+	<center>
+    <!-- <button id="button" onclick="openDialog()" class="button">好的 ！</button> -->
+    <!-- <div class='demo-bg'></div> -->
+	<!-- <div class='alertMessageBg'> -->
+		<div class='demo-txt'>
+			<center><img src="images/2.png" /></center>
+			<button id="btn" onclick="closeDialog()" class="button_close">关闭</button>
+		</div>
+	<!-- </div>	 -->
+	</center>
+</div>
+
+<!-- 提交空白 -->
+<center>
+	<div class='demo-txt2'>
+		<center><img src="images/3.png" /></center>
+		<center><h4>欧尼酱，你的支付宝信息没有填写哦</h4></center>
+		<button id="btn2" onclick="closetemper()" class="button_close">关闭</button>
+	</div>
+</center>
+
+
+<script>
+	
+    var demobg = document.querySelector(".demo-bg");
+    var demotxt = document.querySelector(".demo-txt");
+	var demotxt2 = document.querySelector(".demo-txt2");
+	
+	function NullJudge() {			/*判断是否空值*/
+		if(document.getElementById("yourname").value==""||document.getElementById("yourpw").value==""||document.getElementById("yourpaypw").value==""){
+			opentemper();
+		}else {
+			openDialog();
+		}
+	}
+	
+    function openDialog() {						/* 弹窗 */
+	
+		document.getElementById("yourname").value="";			/* 清空输入框 */
+		document.getElementById("yourpw").value="";
+		document.getElementById("yourpaypw").value="";
+		
+        demotxt.style.display = "block";
+        // demobg.style.display = "block";
+    }
+
+    function closeDialog() {					/* 关闭界面 */
+        demotxt.style.display = "none";
+        demobg.style.display = "none";
+    }
+	
+	function opentemper() {
+		demotxt2.style.display = "block";
+	}
+	
+	function closetemper() {					/* 关闭界面 */
+	    demotxt2.style.display = "none";
+	    demobg2.style.display = "none";
+	}
+	
+</script> 
+
+		
+		
+	</body>
+</html>
